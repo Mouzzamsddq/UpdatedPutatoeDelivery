@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">UpdatedPutatoeDelivery</string>
+    <string name="google_maps_api_key">AIzaSyA7FLRZct6SAn3PV94kRFOOMhJWNwXo8yk</string>
+    <string name="google_maps_direction_api_key">AIzaSyAiOEixVl4_Xip7RnI-ZmDLT3cXgv3xoYA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

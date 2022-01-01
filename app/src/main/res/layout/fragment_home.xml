@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.HomeFragment">
+
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/map"
+        android:background="@color/putatoeBackground"
+        android:layout_marginTop="10dp">
+
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@drawable/login_border"
+               android:layout_margin="10dp"
+               android:id="@+id/deliveryTimeLinearLayout"
+               android:padding="10dp"
+               android:orientation="horizontal">
+
+               <ImageView
+                   android:layout_width="25dp"
+                   android:src="@drawable/clock_icon"
+                   android:id="@+id/clockImageView"
+                   android:layout_height="25dp"/>
+
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Delivery By"
+                   android:textSize="16sp"
+                   android:layout_marginStart="10dp"
+                   android:textColor="#070707"/>
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="05:10 PM"
+                   android:textSize="16sp"
+                   android:textColor="@color/putatoeGreenColor"
+                   android:layout_marginStart="10dp"
+                   android:textStyle="bold"/>
+
+
+
+
+           </LinearLayout>
+
+
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_below="@+id/deliveryTimeLinearLayout"
+               android:id="@+id/orderStatusLayout"
+               android:layout_margin="10dp"
+               android:animateLayoutChanges="true"
+               android:background="@drawable/login_border"
+               android:padding="10dp"
+               android:layout_height="match_parent">
+
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="300dp"
+                   android:visibility="gone"
+                   android:animateLayoutChanges="true"
+                   android:id="@+id/trackOrderRelativeLayout">
+
+
+
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/trackOrderRecyclerView"
+                       android:layout_toStartOf="@id/shrinkArrowImageView"
+                       tools:listitem="@layout/timeline_item"/>
+
+                   <ImageView
+                       android:layout_width="40dp"
+                       android:layout_height="40dp"
+                       android:src="@drawable/shrink_arrow"
+                       android:layout_alignParentEnd="true"
+                       android:layout_alignParentBottom="true"
+                       android:id="@+id/shrinkArrowImageView"/>
+
+
+
+
+               </RelativeLayout>
+
+
+
+
+
+
+               <LinearLayout
+                   android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:visibility="visible"
+                   android:id="@+id/trackOrderRelativeLayout2"
+                   android:layout_marginLeft="10dp"
+                   android:layout_marginRight="10dp">
+
+                   <com.github.vipulasri.timelineview.TimelineView
+                       android:id="@+id/timeline"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       app:markerSize="20dp"
+                       app:lineWidth="3dp"
+                       app:startLineColor="@color/colorAccent"
+                       app:endLineColor="@color/colorAccent"
+                       app:lineStyle="normal"/>
+
+                   <com.google.android.material.card.MaterialCardView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="15dp"
+                       android:layout_weight="1"
+                       android:layout_marginBottom="15dp"
+                       android:layout_marginLeft="10dp"
+                       android:layout_marginRight="5dp"
+                       android:layout_gravity="center_vertical"
+                       app:cardBackgroundColor="@color/colorGrey50"
+                       app:contentPadding="15dp">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:gravity="center"
+                           android:orientation="vertical">
+
+                           <androidx.appcompat.widget.AppCompatTextView
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/text_timeline_date"
+                               android:textSize="12sp"
+                               android:text="24 JAN 2021"
+                               tools:text="24 JAN"/>
+
+                           <androidx.appcompat.widget.AppCompatTextView
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_marginTop="5dp"
+                               android:id="@+id/text_timeline_title"
+                               android:textColor="@android:color/black"
+                               android:text="Order Successfully Completed"
+                               tools:text="Order Successfully Completed"/>
+
+                       </LinearLayout>
+
+                   </com.google.android.material.card.MaterialCardView>
+
+                   <ImageView
+                       android:layout_width="40dp"
+                       android:id="@+id/expandArrowImageView"
+                       android:layout_height="40dp"
+                       android:layout_gravity="center_vertical"
+                       android:src="@drawable/down_arrow"/>
+
+               </LinearLayout>
+
+
+           </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:padding="10dp"
+               android:layout_margin="10dp"
+               android:background="@drawable/login_border"
+               android:layout_below="@id/orderStatusLayout"
+               android:id="@+id/deliveryPersonDetailsLayout"
+               android:layout_height="wrap_content">
+
+
+               <ImageView
+                   android:layout_width="40dp"
+                   android:layout_height="40dp"
+                   android:layout_centerVertical="true"
+                   android:src="@drawable/profile_image_icon"
+                   android:id="@+id/deliveryPersonImageView"/>
+
+
+
+
+
+
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_toEndOf="@id/deliveryPersonImageView"
+                 android:layout_marginStart="10dp"
+                 android:orientation="vertical">
+
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Delivery Agent"
+                     android:textColor="@color/putatoeGreenColor"
+                     android:textSize="14sp"/>
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Peter Jones"
+                     android:textSize="16sp"
+                     android:textStyle="bold"
+                     android:textColor="@color/putatoeGreenColor"/>
+
+
+             </LinearLayout>
+
+
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_centerVertical="true"
+                 android:layout_alignParentEnd="true">
+
+
+                 <ImageView
+                     android:layout_width="30dp"
+                     android:layout_height="30dp"
+                     android:layout_marginEnd="10dp"
+                     android:src="@drawable/message_icon"
+                     />
+
+                 <ImageView
+                     android:layout_width="30dp"
+                     android:layout_height="30dp"
+                     android:src="@drawable/call_delivery_icon"
+                     android:layout_marginEnd="10dp"
+                     android:layout_marginStart="10dp"/>
+
+             </LinearLayout>
+
+
+
+
+
+
+
+           </RelativeLayout>
+
+
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_margin="10dp"
+               android:padding="10dp"
+               android:background="@drawable/login_border"
+               android:layout_below="@id/deliveryPersonDetailsLayout">
+
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Total Amount : ₹420"
+                       android:textColor="@color/black"
+                       android:textStyle="bold"
+                       android:id="@+id/totalAmountTextView"
+                       android:textSize="16sp"/>
+
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Order Details > "
+                       android:textSize="18sp"
+                       android:textColor="@color/putatoeGreenColor"/>
+
+
+
+               </LinearLayout>
+
+
+
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentEnd="true"
+                   android:layout_centerVertical="true"
+                   android:layout_marginEnd="10dp"
+                   android:orientation="horizontal">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Prepaid"
+                   android:textSize="18sp"
+                   android:layout_marginEnd="20dp"/>
+
+
+                   <ImageView
+                       android:layout_width="30dp"
+                       android:layout_height="30dp"
+                       android:src="@drawable/right_icon"/>
+
+
+               </LinearLayout>
+
+
+
+
+
+           </RelativeLayout>
+
+
+
+
+
+
+       </RelativeLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>
